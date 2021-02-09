@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body cz-shortcut-listen="true">
+    <header>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <main>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a
+        href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school"
+        >This link goes to Strive School</a
+      >
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <p>And this text is just for the exercise too!</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script>
+      /* EXERCISE 1
+      Write a const for changing the title of the document in something else.
+      */
+      const changeTitle = (title) => {
+        let newTitle = document.createElement("title");
+        let headerrr = document.querySelector("head");
+        let text = document.createTextNode(title);
+        newTitle.appendChild(text);
+        headerrr.appendChild(newTitle);
+      };
+      changeTitle("halo everyone");
+      /* EXERCISE 2
+      Write a const for changing the class of the title of the page in "myHeading".
+      */
+
+      const addClassToTitle = () => {
+        let title = document.querySelector("h1");
+        title.classList.add("myHeading");
+      };
+      addClassToTitle();
+
+      /* EXERCISE 3
+      Write a const for changing the text of only the p which are children of a div.
+      */
+
+      const changePcontent = (text) => {
+        let p = document.querySelectorAll("div p");
+        p.forEach((p) => {
+          p.innerText = text;
+        });
+      };
+      changePcontent("hi im the new content of the p tag!");
+      /* EXERCISE 4
+      Write a const for changing the destination of every link to https://www.google.com
+      */
+
+      const changeUrls = () => {
+        link = document.querySelectorAll("a");
+        link.forEach((element) => {
+          element.href = "https://www.google.com";
+        });
+      };
+      changeUrls();
+      /* EXERCISE 5
+       Write a const for adding a new item in the second list.
+       */
+
+      const addToTheSecond = (content) => {
+        let secondul = document.getElementById("secondList");
+        let newitemLI = document.createElement("li");
+        let text = document.createTextNode(content);
+        newitemLI.appendChild(text);
+        secondul.appendChild(newitemLI);
+      };
+      addToTheSecond("im a new item!");
+      /* EXERCISE 6
+      Write a const for adding a second paragraph to the div.
+      */
+
+      const addParagraph = (content) => {
+        let div = document.querySelector("div");
+        let newP = document.createElement("p");
+        let text = document.createTextNode(content);
+        newP.appendChild(text);
+        div.appendChild(newP);
+      };
+      addParagraph("im a even newer paragraph!");
+      /* EXERCISE 7
+      Write a const for making the first UL disappear.
+      */
+
+      const firstUlDisappear = () => {
+        let firstul = document.getElementById("firstList");
+        firstul.style.display = "none";
+      };
+      firstUlDisappear();
+      /* EXERCISE 8
+      Write a const for making the background of every UL green.
+      */
+
+      const paintItGreen = () => {
+        let uls = document.querySelectorAll("ul");
+        uls.forEach((element) => {
+          element.style.backgroundColor = "green";
+        });
+      };
+      paintItGreen();
+
+      /* EXERCISE 9
+      Make the heading of the page change color every time the user clicks on it.
+      */
+      const makeItClickable = () => {
+        let heading = document.querySelector("header");
+        const colorchanger = () => {
+          heading.style.backgroundColor =
+            "#" +
+            (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
+        };
+        heading.onclick = colorchanger;
+      };
+      makeItClickable();
+      /* EXERCISE 10
+      Change the footer text with something else when the user clicks on it.
+      */
+
+      const changeFooterText = () => {
+        let footertext = document.querySelector("footer p");
+        const changetext = () => {
+          document.querySelector("footer p").innerText =
+            "something else onclick!";
+        };
+        footertext.onclick = changetext;
+      };
+      changeFooterText();
+      /* EXERCISE 11
+      Attach an event listener to the input field in the page for console logging its value just after any keystroke.
+      */
+      const readvalue = (event) => {
+        console.log(event);
+        let valueinput = document.getElementById("input-field");
+        let inputValue = valueinput.value;
+        console.log(inputValue);
+      };
+      let addEventListener = () => {
+        let inputField = document.getElementById("input-field");
+        inputField.onkeydown = readvalue;
+      };
+      addEventListener();
+      /* EXERCISE 12
+      Create a new welcome alert message when the page successfully loads.
+      */
+
+      window.onload = alertfunction = () => {
+        alert("Welcome!");
+      };
+
+      /* EXERCISE 13
+      Use HTML5 tags to divide the content of the page in a more semantic way.
+      */
+    </script>
+  </body>
+</html>
