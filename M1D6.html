@@ -167,8 +167,7 @@
       const changeFooterText = () => {
         let footertext = document.querySelector("footer p");
         const changetext = () => {
-          document.querySelector("footer p").innerText =
-            "something else onclick!";
+          footertext.innerText = "something else onclick!";
         };
         footertext.onclick = changetext;
       };
